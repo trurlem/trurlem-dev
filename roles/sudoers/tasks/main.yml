@@ -2,7 +2,7 @@
 - name: Add sudoers custom configuration.
   ansible.builtin.copy:
     content: "{{ sudoers_custom_content }}"
-    dest: /private/etc/sudoers.d/custom
+    dest: "{{ sudoers_custom_file }}"
     mode: 0440
     validate: 'visudo -csf %s'
   become: true

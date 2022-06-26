@@ -1,0 +1,9 @@
+---
+- name: Ensure items in orig are links in dest.
+  ansible.builtin.file:
+    src: "{{ orig }}/{{ item }}"
+    dest: "{{ dest }}/{{ item }}"
+    state: link
+    force: true
+  become: false
+  with_items: "{{ items }}"

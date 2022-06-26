@@ -1,6 +1,6 @@
 .DS_Store
 *.retry
-roles/
+*.tar.gz
 ansible_collections/
 config.yml
 secrets.yaml

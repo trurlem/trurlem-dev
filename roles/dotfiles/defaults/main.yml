@@ -1,0 +1,6 @@
+---
+repo_branch: "master"
+repo_accept_hostkey: true
+host_repo_path: "~/dotfiles"
+host_home: "~"
+host_zsh_custom_path: "{{ lookup('env', 'ZSH_CUSTOM') | default('~/.oh-my-zsh/custom', true) }}"

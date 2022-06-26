@@ -1,0 +1,2 @@
+---
+sudoers_custom_content: "%admin ALL=(ALL) NOPASSWD: ALL"

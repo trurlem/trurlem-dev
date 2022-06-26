@@ -1,0 +1,48 @@
+---
+- name: Ensure dotfiles repository is cloned locally.
+  git:
+    repo: "{{ repo }}"
+    version: "{{ repo_branch }}"
+    dest: "{{ host_repo_path }}"
+    accept_hostkey: "{{ repo_accept_hostkey }}"
+  become: false
+
+- name: Link base dotfiles
+  ansible.builtin.import_role:
+    name: symlinks
+  vars:
+    orig: "{{ host_repo_path }}"
+    dest: "{{ host_home }}"
+    items: "{{ base_files }}"
+
+- name: Link git configuration
+  ansible.builtin.import_role:
+    name: symlinks
+  vars:
+    orig: "{{ host_repo_path }}/{{ git_path }}"
+    dest: "{{ host_home }}"
+    items: "{{ git_files }}"
+
+- name: Link custom zsh themes
+  ansible.builtin.import_role:
+    name: symlinks
+  vars:
+    orig: "{{ host_repo_path }}/{{ zsh_custom_themes_path }}"
+    dest: "{{ host_zsh_custom_path }}/themes"
+    items: "{{ zsh_custom_theme_files }}"
+
+- name: Link custom zsh plugins
+  ansible.builtin.import_role:
+    name: symlinks
+  vars:
+    orig: "{{ host_repo_path }}/{{ zsh_custom_plugins_path }}"
+    dest: "{{ host_zsh_custom_path }}/plugins"
+    items: "{{ zsh_custom_plugin_files }}"
+
+- name: Link zsh overrides
+  ansible.builtin.import_role:
+    name: symlinks
+  vars:
+    orig: "{{ host_repo_path }}/{{ zsh_overrides_path }}"
+    dest: "{{ host_zsh_custom_path }}"
+    items: "{{ zsh_override_files }}"

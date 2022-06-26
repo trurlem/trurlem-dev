@@ -1,0 +1,7 @@
+.DS_Store
+*.retry
+roles/
+ansible_collections/
+config.yml
+secrets.yaml
+venv/

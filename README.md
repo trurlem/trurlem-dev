@@ -1,3 +1,3 @@
 # Ansible Collection - trurlem.dev
 
-A colletion for automating the deployment of dev configuration.
+A collection for automating the deployment of dev configuration.

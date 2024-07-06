@@ -1,3 +1,5 @@
+Forked from: https://github.com/geerlingguy/ansible-collection-mac
+
 # Ansible Role: Homebrew
 
 Installs [Homebrew][homebrew] on MacOS, and configures packages, taps, and cask apps according to supplied variables.

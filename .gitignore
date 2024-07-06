@@ -1,6 +1,7 @@
-.DS_Store
 *.retry
 *.tar.gz
+.DS_Store
+.vscode
 ansible_collections/
 config.yml
 secrets.yaml

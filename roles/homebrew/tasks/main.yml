@@ -48,6 +48,12 @@
     mode: 0775
   become: true
 
+- name: Check if Homebrew install path is empty
+  find:
+    paths: "{{ homebrew_install_path }}"
+    file_type: any
+  register: homebrew_install_path_contents
+
 # Clone Homebrew.
 - name: Ensure Homebrew is installed.
   git:
@@ -58,6 +64,7 @@
     depth: 1
   become: true
   become_user: "{{ homebrew_user }}"
+  when: not (homebrew_install_path_contents.matched > 0)
 
 # Adjust Homebrew permissions.
 - name: Ensure proper permissions and ownership on homebrew_brew_bin_path dirs.

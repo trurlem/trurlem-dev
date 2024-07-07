@@ -1,7 +1,7 @@
 ---
 namespace: trurlem
 name: dev
-version: 1.1.1
+version: 1.1.2
 readme: README.md
 
 authors:
@@ -17,7 +17,7 @@ tags:
 
 repository: https://github.com/trurlem/trurlem-dev
 documentation: https://github.com/trurlem/trurlem-dev
-homepage: http://example.
+homepage: https://github.com/trurlem/trurlem-dev
 issues: https://github.com/trurlem/trurlem-dev/issues
 
 # A list of file glob-like patterns used to filter any files or directories that should not be included in the build
